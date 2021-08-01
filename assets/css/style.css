@@ -1195,12 +1195,15 @@ section .container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(20, 20, 20)
 }
 
 .video-player {
   width: 95vw;
   height: 51vw;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  border: 5px solid black;
 }
 
 iframe {
@@ -1209,6 +1212,8 @@ iframe {
 }
 
 @media screen and (min-width: 768px) {
-  
+  .video-player {
+    width: 60vw;
+    height: 33vw;
   }
-}
+  }
