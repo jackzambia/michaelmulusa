@@ -59,7 +59,7 @@ th {
       <h1><a href="index.html">Michael Mulusa</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-      <h2>I'm a SuperStar <span>Film Maker & Author</span> from Lusaka</h2>
+      <h2 class="">I'm a SuperStar <span class="typeText"></span></h2>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -68,7 +68,7 @@ th {
           <li><a class="nav-link" href="#resume">Resume</a></li>
           <li><a class="nav-link" href="#reel">Showcase</a></li>
           <li><a class="nav-link" href="#services">Services</a></li>
-          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link" href="#portfolio">Galary</a></li>
           <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -780,7 +780,7 @@ th {
     <div class="container">
 
       <div class="section-title">
-        <h2>Portfolio</h2>
+        <h2>Galary</h2>
         <p>My Works</p>
       </div>
 
@@ -1003,7 +1003,46 @@ th {
   
     Copyright &copy; 2021 | Michael Mulusa&trade; | Designed By <a href="https://www.jacktembo.com">Jack Tembo&REG;</a>
   </div>
+  <script>
+    var typeText = document.querySelector(".typeText")
+var textToBeTyped = "Film Maker & Author From Lusaka"
+var index = 0, isAdding = true
 
+function playAnim() {
+  setTimeout(function () {
+    // set the text of typeText to a substring of the text to be typed using index.
+    typeText.innerText = textToBeTyped.slice(0, index)
+    if (isAdding) {
+      // adding text
+      if (index > textToBeTyped.length) {
+        // no more text to add
+        isAdding = false
+        //break: wait 2s before playing again
+        setTimeout(function () {
+          playAnim()
+        }, 2000)
+        return
+      } else {
+        // increment index by 1
+        index++
+      }
+    } else {
+      // removing text
+      if (index === 0) {
+        // no more text to remove
+        isAdding = true
+      } else {
+        // decrement index by 1
+        index--
+      }
+    }
+    // call itself
+    playAnim()
+  }, 120)
+}
+// start animation
+playAnim()
+  </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>

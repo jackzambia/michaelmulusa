@@ -325,7 +325,22 @@ h6 {
   font-size: 16px;
   position: relative;
 }
+/* type Text */
 
+.typeText::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -1195,7 +1210,7 @@ section .container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(20, 20, 20)
+  background-color: rgb(20, 20, 20);
 }
 
 .video-player {
@@ -1216,4 +1231,4 @@ iframe {
     width: 60vw;
     height: 33vw;
   }
-  }
+}
