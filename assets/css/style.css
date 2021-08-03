@@ -559,12 +559,18 @@ section .container {
 }
 
 .testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50%;
+  width: 10vw;
+  border-radius: 10%;
   margin: -40px 0 0 40px;
   position: relative;
   z-index: 2;
   border: 6px solid rgba(255, 255, 255, 0.12);
+}
+
+@media screen and (max-width: 768px) {
+  .testimonials .testimonial-item .testimonial-img {
+    width: 150px;
+  }
 }
 
 .testimonials .testimonial-item h3 {
